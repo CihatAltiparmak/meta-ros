@@ -360,3 +360,7 @@ ROS_UNRESOLVED_DEP-libserial-dev = "libserial"
 ROS_UNRESOLVED_DEP-python3-uvloop = "python3-uvloop"
 ROS_UNRESOLVED_DEP-gz-plugin = "gz-plugin"
 ROS_UNRESOLVED_DEP-libgdal-dev = "gdal"
+
+ROS_UNRESOLVED_DEP-rapidjson-dev = "rapidjson"
+ROS_UNRESOLVED_DEP-python3-smbus = "python3-smbus"
+ROS_UNRESOLVED_DEP-ignition-math6 = "ignition-math6"
