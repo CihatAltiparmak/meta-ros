@@ -1,0 +1,40 @@
+--- a/magick/Makefile.am
++++ b/magick/Makefile.am
+@@ -27,7 +27,7 @@ 
+ if WITH_MODULES
+ magick_libGraphicsMagick_la_SOURCES = $(MAGICK_BASE_SRCS) $(MAGICK_PLATFORM_SRCS)
+-magick_libGraphicsMagick_la_LIBADD = $(MAGICK_DEP_LIBS) $(MAGICK_EXTRA_DEP_LIBS)
++magick_libGraphicsMagick_la_LIBADD = $(MAGICK_DEP_LIBS) $(MAGICK_EXTRA_DEP_LIBS) $(LIB_ZLIB)
+ else
+ magick_libGraphicsMagick_la_SOURCES = $(MAGICK_BASE_SRCS) $(MAGICK_PLATFORM_SRCS) $(MAGICK_CODER_SRCS) $(MAGICK_FILTER_SRCS)
+ magick_libGraphicsMagick_la_LIBADD = $(MAGICK_DEP_LIBS) $(MAGICK_EXTRA_DEP_LIBS)
+
+--- a/coders/Makefile.am
++++ b/coders/Makefile.am
+@@ -652,7 +652,7 @@
+ coders_pict_la_SOURCES     = coders/pict.c
+ coders_pict_la_CPPFLAGS    = $(MAGICK_CODER_CPPFLAGS)
+ coders_pict_la_LDFLAGS     = $(MODULECOMMONFLAGS)
+-coders_pict_la_LIBADD      = $(LIBMAGICK)
++coders_pict_la_LIBADD      = $(LIBMAGICK) $(LIB_ZLIB)
+ 
+ # PIX coder module
+ coders_pix_la_SOURCES      = coders/pix.c
+@@ -736,7 +736,7 @@
+ coders_sct_la_SOURCES      = coders/sct.c
+ coders_sct_la_CPPFLAGS     = $(MAGICK_CODER_CPPFLAGS)
+ coders_sct_la_LDFLAGS      = $(MODULECOMMONFLAGS)
+-coders_sct_la_LIBADD       = $(LIBMAGICK)
++coders_sct_la_LIBADD       = $(LIBMAGICK) $(LIB_ZLIB)
+ 
+ # SFW coder module
+ coders_sfw_la_SOURCES      = coders/sfw.c
+@@ -868,7 +868,7 @@
+ coders_wpg_la_SOURCES      = coders/wpg.c
+ coders_wpg_la_CPPFLAGS     = $(MAGICK_CODER_CPPFLAGS)
+ coders_wpg_la_LDFLAGS      = $(MODULECOMMONFLAGS)
+-coders_wpg_la_LIBADD       = $(LIBMAGICK)
++coders_wpg_la_LIBADD       = $(LIBMAGICK) $(LIB_ZLIB)
+ 
+ # X coder module
+ coders_x_la_SOURCES        = coders/x.c
