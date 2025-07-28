@@ -35,6 +35,7 @@ ROS_BUILD_DEPENDS = " \
     tf2 \
     tf2-geometry-msgs \
     tf2-msgs \
+    ackermann-msgs \
 "
 
 ROS_BUILDTOOL_DEPENDS = " \
