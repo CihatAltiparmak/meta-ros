@@ -45,3 +45,21 @@ EXTRA_OECMAKE:prepend:class-nativesdk = "\
     -DCMAKE_PREFIX_PATH='${STAGING_DIR_NATIVE}${ros_base_prefix};${STAGING_DIR_NATIVE}${ros_prefix};${STAGING_DIR_NATIVE}${prefix}' \
     -DCMAKE_INSTALL_PREFIX:PATH='${ros_prefix}' \
 "
+
+do_install:append() {
+
+    echo "Remove host prefixes from cmake files of ros2 packages"
+    echo "searching for ${D}${libdir}/${ROS_BPN}/cmake/ "
+    echo "searching for ${D}${ros_libdir}/../share/${ROS_BPN}/cmake/"
+    echo "${STAGING_DIR_TARGET}"
+    for i in ${D}${libdir}/${ROS_BPN}/cmake/* ${D}${ros_libdir}/../share/${ROS_BPN}/cmake/*; do
+        if [ -f "$i" ]; then
+            if [ -z "${STAGING_DIR_TARGET}"]; then
+                echo "STAGING_DIR_TARGET is null or empty"
+            else
+                echo 'sed -i -e s:${STAGING_DIR_TARGET}:"\${CMAKE_SYSROOT}":g $i'
+                sed -i -e s:${STAGING_DIR_TARGET}:\${CMAKE_SYSROOT}:g $i
+            fi
+        fi
+    done
+}
