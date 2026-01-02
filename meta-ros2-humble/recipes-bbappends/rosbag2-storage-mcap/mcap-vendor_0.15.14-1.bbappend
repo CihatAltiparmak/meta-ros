@@ -20,6 +20,6 @@ SRCREV_zstd = "e47e674cd09583ff0503f0f6defd6d23d8b718d3"
 SRCREV_FORMAT += "_mcap_lz4_zstd"
 #
 # PN package in zstd-vendor is empty and not created, remove runtime dependency on it
-ROS_EXEC_DEPENDS:remove = "zstd-vendor"
+ROS_BUILD_DEPENDS += "zstd zstd-vendor"
 
 inherit pkgconfig
