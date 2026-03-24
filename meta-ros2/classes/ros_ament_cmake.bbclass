@@ -30,20 +30,24 @@ FILES:${PN}:prepend = " \
     ${datadir}/ament_index \
 "
 EXTRA_OECMAKE:append = " -DAMENT_CMAKE_ENVIRONMENT_PARENT_PREFIX_PATH_GENERATION=OFF"
+EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE:STRING=Release"
 
 EXTRA_OECMAKE:prepend:class-target = "\
     -DCMAKE_PREFIX_PATH='${STAGING_DIR_HOST}${ros_prefix};${STAGING_DIR_HOST}${prefix}' \
     -DCMAKE_INSTALL_PREFIX:PATH='${ros_prefix}' \
+    -DCMAKE_BUILD_TYPE=Release \
 "
 
 EXTRA_OECMAKE:prepend:class-native = "\
     -DCMAKE_PREFIX_PATH='${ros_prefix}' \
     -DCMAKE_INSTALL_PREFIX:PATH='${ros_prefix}' \
+    -DCMAKE_BUILD_TYPE=Release \
 "
 
 EXTRA_OECMAKE:prepend:class-nativesdk = "\
     -DCMAKE_PREFIX_PATH='${STAGING_DIR_NATIVE}${ros_base_prefix};${STAGING_DIR_NATIVE}${ros_prefix};${STAGING_DIR_NATIVE}${prefix}' \
     -DCMAKE_INSTALL_PREFIX:PATH='${ros_prefix}' \
+    -DCMAKE_BUILD_TYPE=Release \
 "
 
 do_install:append() {

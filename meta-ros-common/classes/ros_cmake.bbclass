@@ -7,14 +7,17 @@ EXTRA_OECMAKE:prepend:class-target = "\
     -DCMAKE_PREFIX_PATH='${STAGING_DIR_HOST}${ros_prefix};${STAGING_DIR_HOST}${prefix}' \
     -DCMAKE_INSTALL_PREFIX:PATH='${ros_prefix}' \
     -DCMAKE_MODULE_PATH='${STAGING_DIR_HOST}${ros_datadir}/cmake/Modules/' \
+    -DCMAKE_BUILD_TYPE=Release \
 "
 
 EXTRA_OECMAKE:prepend:class-native = "\
     -DCMAKE_PREFIX_PATH='${STAGING_DIR_NATIVE}${ros_prefix};${STAGING_DIR_NATIVE}${prefix}' \
     -DCMAKE_INSTALL_PREFIX:PATH='${ros_prefix}' \
+    -DCMAKE_BUILD_TYPE=Release \
 "
 
 EXTRA_OECMAKE:prepend:class-nativesdk = "\
     -DCMAKE_PREFIX_PATH='${STAGING_DIR_NATIVE}${ros_prefix};${STAGING_DIR_NATIVE}${prefix}' \
     -DCMAKE_INSTALL_PREFIX:PATH='${ros_prefix}' \
+    -DCMAKE_BUILD_TYPE=Release \
 "
