@@ -93,7 +93,7 @@ FILES:${PN} += "\
     ${ros_prefix} \
     "
 
-FILES:${PN}-dev += "\
+FILES:${PN} += "\
     ${ros_includedir} \
     ${ros_libdir}/pkgconfig \
     ${PYTHON_SITEPACKAGES_DIR}/*.la \
@@ -102,7 +102,7 @@ FILES:${PN}-dev += "\
     ${datadir}/${ROS_BPN}/*.template \
     "
 
-FILES:${PN}-dbg += "\
+FILES:${PN} += "\
     ${ros_bindir}/.debug ${ros_libexecdir}/.debug ${ros_libdir}/.debug \
     ${ros_datadir}/*/bin/.debug \
     ${PYTHON_SITEPACKAGES_DIR}/.debug \
@@ -110,7 +110,7 @@ FILES:${PN}-dbg += "\
     ${PYTHON_SITEPACKAGES_DIR}/*/*/.debug \
     "
 
-FILES:${PN}-staticdev += "\
+FILES:${PN} += "\
     ${ros_libdir}/*.a \
     ${ros_libdir}/${ROS_BPN}/*.a \
     "

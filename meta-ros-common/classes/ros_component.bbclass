@@ -22,6 +22,6 @@ FILES:${PN}:prepend = " \
     ${libdir}/${ROS_BPN} \
 "
 
-FILES:${PN}-dev:prepend = " \
+FILES:${PN}:prepend = " \
     ${datadir}/${ROS_BPN}/cmake \
 "
